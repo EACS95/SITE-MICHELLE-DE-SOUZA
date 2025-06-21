@@ -1,0 +1,7 @@
+# Arquivo robots.txt para o site michellesouzaadv.com.br
+# Permite o acesso a todos os robôs de busca e informa a localização do sitemap.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.michellesouzaadv.com.br/sitemap.xml

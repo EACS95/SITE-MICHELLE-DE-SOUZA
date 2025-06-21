@@ -1,22 +1,57 @@
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('animate__fadeIn');
-        });
+/* =================================================================== */
+/*          CÓDIGO JAVASCRIPT FINAL - VERSÃO CORRIGIDA 2.0           */
+/* =================================================================== */
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+// =======================
+// LÓGICA DO MENU MOBILE
+// =======================
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('animate__fadeIn');
+    });
+}
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (mobileMenu) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
+
+// =======================
+// LÓGICA DAS ANIMAÇÕES DE ROLAGEM
+// =======================
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.animate__animated');
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementPosition < windowHeight - 100) {
+            // Adiciona a classe apenas se ela ainda não foi adicionada para evitar re-animação
+            if (!element.classList.contains('start-animation')) {
+                element.classList.add('start-animation');
+            }
+        }
+    });
+};
+
+window.addEventListener('scroll', animateOnScroll);
+
+// =======================
+// LÓGICA QUE RODA APÓS O CARREGAMENTO DA PÁGINA
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Executa a animação para elementos já visíveis no carregamento
+    animateOnScroll();
+
+    // 2. LÓGICA DO BOTÃO "VOLTAR AO TOPO"
+    const backToTopButton = document.getElementById('backToTop');
+    if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
@@ -26,97 +61,83 @@
                 backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
             }
         });
-        
+
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
+    }
 
-        // Contact Form Submission
-        function sendMessage(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Basic validation
-            if (!name || !email || !phone || !subject || !message) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-            
-            // Format WhatsApp message
-            const whatsappMessage = `Olá Dra. Michelle, sou ${name}.\nAssunto: ${subject}\nMensagem: ${message}\nTelefone: ${phone}\nEmail: ${email}`;
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            
-            // Open WhatsApp with pre-filled message
-            window.open(`https://wa.me/5561993149693?text=${encodedMessage}`, '_blank');
-            
-            // Reset form
-            document.getElementById('contactForm').reset();
-            
-            // Show success message
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    // 3. LÓGICA DO CONSENTIMENTO DE COOKIES
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookies = document.getElementById('acceptCookies');
+    if (cookieConsent && acceptCookies) {
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                cookieConsent.classList.remove('hidden', 'translate-y-full');
+                cookieConsent.classList.add('translate-y-0');
+            }, 2000);
         }
-
-        // Scroll animations
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate__animated');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    const animationClass = element.classList[1];
-                    element.classList.add(animationClass);
-                }
-            });
-        };
         
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Cookie Consent
-        document.addEventListener('DOMContentLoaded', function() {
-            const cookieConsent = document.getElementById('cookieConsent');
-            const acceptCookies = document.getElementById('acceptCookies');
-            
-            if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(() => {
-                    cookieConsent.classList.remove('hidden');
-                    cookieConsent.classList.remove('translate-y-full');
-                    cookieConsent.classList.add('translate-y-0');
-                }, 2000);
-            }
-            
-            acceptCookies.addEventListener('click', function() {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieConsent.classList.add('translate-y-full');
-                
-                setTimeout(() => {
-                    cookieConsent.classList.add('hidden');
-                }, 300);
-                
-                // Here you would load your analytics scripts
-                // Example: loadGoogleAnalytics();
-            });
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.add('translate-y-full');
+            setTimeout(() => {
+                cookieConsent.classList.add('hidden');
+            }, 300);
+            // loadGoogleAnalytics(); 
         });
-        
-        // Example analytics function (replace with your actual tracking ID)
-        function loadGoogleAnalytics() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-XXXXX-Y');
-            
-            const script = document.createElement('script');
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y';
-            document.head.appendChild(script);
-        }
+    }
+
+    // 4. LÓGICA DO MODAL DE AGRADECIMENTO
+    const form = document.getElementById('form');
+    const modal = document.getElementById('thankYouModal');
+    const closeModalButton = document.getElementById('closeModalButton');
+    if (form && modal && closeModalButton) {
+        form.addEventListener('submit', () => {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.remove('scale-95');
+            }, 10);
+            setTimeout(() => {
+                form.reset();
+            }, 500);
+        });
+
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        };
+        closeModalButton.addEventListener('click', closeModal);
+    }
+
+    // 5. LÓGICA DA MÁSCARA DE TELEFONE
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        const phoneMask = IMask(phoneInput, {
+            mask: '(00) 00000-0000'
+        });
+    }
+});
+
+// =======================
+// FUNÇÃO AUXILIAR GOOGLE ANALYTICS
+// =======================
+function loadGoogleAnalytics() {
+    const gaId = 'UA-XXXXX-Y'; // Substitua pelo seu ID
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaId);
     
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(script);
+}

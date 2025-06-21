@@ -1,3 +1,7 @@
+/* =================================================================== */
+/*             ARQUIVO style.css FINAL E OTIMIZADO                     */
+/* =================================================================== */
+
 /* === IMPORTAÇÃO DE FONTES === */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
@@ -5,6 +9,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* === CONFIGURAÇÕES GERAIS === */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
@@ -25,11 +33,11 @@ body {
 }
 
 .hero-section {
-    --bg-url: url('URL-DA-IMAGEM-HERO');
+    --bg-url: url('../img/MichelleDeSouza-Advogada.jpg'); /* Exemplo, ajuste o caminho se necessário */
 }
 
 .quote-section {
-    --bg-url: url('URL-DA-IMAGEM-QUOTE');
+    --bg-url: url('../img/MichelleDeSouza-Advogada.jpg'); /* Exemplo, ajuste o caminho se necessário */
 }
 
 /* === BOTÕES === */
@@ -61,7 +69,6 @@ body {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     transition: all 0.5s ease;
-    z-index: -1;
 }
 
 .btn-primary:hover::before {
@@ -129,4 +136,21 @@ body {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
+}
+
+/* === ANIMAÇÃO DO BOTÃO WHATSAPP (VERSÃO LIMPA, SEM SOMBRA) === */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulse 2.0s infinite; /* Tempo um pouco mais rápido para ser mais notável */
 }
