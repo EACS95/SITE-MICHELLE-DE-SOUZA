@@ -1,0 +1,132 @@
+/* === IMPORTAÇÃO DE FONTES === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* === CONFIGURAÇÕES GERAIS === */
+body {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #F2F2F2;
+    color: #2C3E50;
+}
+
+.font-titulo {
+    font-family: 'Playfair Display', serif;
+}
+
+/* === SEÇÕES COM IMAGEM DE FUNDO === */
+.hero-section, .quote-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), var(--bg-url);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-section {
+    --bg-url: url('URL-DA-IMAGEM-HERO');
+}
+
+.quote-section {
+    --bg-url: url('URL-DA-IMAGEM-QUOTE');
+}
+
+/* === BOTÕES === */
+.btn-primary {
+    background-color: #A77B43;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 10px 15px rgba(44, 62, 80, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #DEBE6D;
+    box-shadow: 0 15px 25px rgba(44, 62, 80, 0.3);
+}
+
+/* Efeito de brilho no hover */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* === NAVBAR LINKS === */
+.nav-link {
+    position: relative;
+    color: #2C3E50;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #A77B43;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #DEBE6D;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* === EFEITOS DE CARDS === */
+.practice-area-card, .testimonial-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.practice-area-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(44, 62, 80, 0.1), 0 10px 10px -5px rgba(44, 62, 80, 0.04);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
+}
+
+/* === ÍCONES E DIFERENCIAIS === */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    color: #DEBE6D;
+}
+
+/* === ANIMAÇÕES === */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
