@@ -206,6 +206,23 @@ let elfsightLoaded = false;
 function loadElfsightWidget() {
     if (elfsightLoaded || !document.getElementById('elfsight-widget')) return;
     elfsightLoaded = true;
+
+    // A seção "Depoimentos" começa escondida; só aparece quando o widget realmente renderizou algo.
+    const widget = document.getElementById('elfsight-widget');
+    const section = document.getElementById('depoimentos');
+    if (section) {
+        let tries = 0;
+        const timer = setInterval(() => {
+            tries++;
+            if (widget.children.length > 0) {
+                section.classList.remove('hidden');
+                clearInterval(timer);
+            } else if (tries > 60) { // desiste após ~30s (widget bloqueado/sem conexão): seção continua escondida
+                clearInterval(timer);
+            }
+        }, 500);
+    }
+
     const script = document.createElement('script');
     script.src = 'https://static.elfsight.com/platform/platform.js';
     script.setAttribute('data-use-service-core', '');

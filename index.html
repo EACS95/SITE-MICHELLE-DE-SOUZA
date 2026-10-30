@@ -446,7 +446,8 @@
 
     <!-- Testimonials -->
     <!-- Depoimentos Google -->
-    <section class="py-20 bg-gray-50">
+    <!-- Seção escondida até o widget carregar de fato (ver loadElfsightWidget em js/script.js) -->
+    <section id="depoimentos" class="hidden py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">DEPOIMENTOS DE CLIENTES</h2>
@@ -458,7 +459,7 @@
 
             <!-- Widget do Google Meu Negócio: script carregado só após aceite de cookies (ver js/script.js) -->
             <div class="max-w-6xl mx-auto">
-                <div id="elfsight-widget" class="elfsight-app-6bbac6ce-bb9d-477c-a23c-8296f3901f25" data-elfsight-app-lazy></div>
+                <div id="elfsight-widget" class="elfsight-app-6bbac6ce-bb9d-477c-a23c-8296f3901f25"></div>
             </div>
         </div>
     </section>
