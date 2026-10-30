@@ -1,7 +1,7 @@
-# Arquivo robots.txt para o site www.michelledesouza.com.br
+# Arquivo robots.txt para o site michelledesouza.com.br
 # Permite o acesso a todos os robôs de busca e informa a localização do sitemap.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.michelledesouza.com.br/sitemap.xml
+Sitemap: https://michelledesouza.com.br/sitemap.xml
