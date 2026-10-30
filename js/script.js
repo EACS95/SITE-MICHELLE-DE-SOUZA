@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Modo protegido (Cloudflare Turnstile + Worker, ver worker/LEIA-ME.md).
         // Enquanto as duas constantes estiverem vazias, o formulário continua enviando direto ao Zoho.
-        const FORM_ENDPOINT = '';       // URL do Worker, ex.: https://formulario.SEU-USUARIO.workers.dev
-        const TURNSTILE_SITE_KEY = '';  // "Site key" do Turnstile (pública)
+        const FORM_ENDPOINT = 'https://formulario-michelle.elicassiodesouza.workers.dev';       //URL do Worker, ex.: https://formulario.SEU-USUARIO.workers.dev
+        const TURNSTILE_SITE_KEY = '0x4AAAAAAFss0vSKfYuiLfiL';  //"Site key" do Turnstile (pública)
         const protectedMode = Boolean(FORM_ENDPOINT && TURNSTILE_SITE_KEY);
         const formError = document.getElementById('form-error');
         const submitButton = form.querySelector('button[type="submit"]');

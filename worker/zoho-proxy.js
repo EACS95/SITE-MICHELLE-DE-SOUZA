@@ -80,7 +80,7 @@ export default {
 
     const zoho = await fetch(env.ZOHO_URL, { method: 'POST', body: out, redirect: 'manual' });
     // Zoho responde 200 ou redireciona (3xx) quando aceita; o resto é erro.
-    const accepted = zoho.status < 400 || zoho.type === 'opaqueredirect';
+    const accepted = zoho.status < 400;
     return reply(accepted ? 200 : 502, { ok: accepted }, origin);
   },
 };
