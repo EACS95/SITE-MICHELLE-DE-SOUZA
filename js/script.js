@@ -112,21 +112,28 @@ document.addEventListener('DOMContentLoaded', () => {
             form.addEventListener(evt, () => { humanInteracted = true; }, { once: true, passive: true });
         });
 
-        form.addEventListener('submit', (event) => {
-            // Honeypot anti-bot: campo invisível para humanos. Se veio preenchido, é bot — bloqueia o envio.
-            const honeypot = document.getElementById('website');
-            const tooFast = Date.now() - formLoadedAt < 4000;
-            if ((honeypot && honeypot.value.trim() !== '') || tooFast || !humanInteracted) {
-                event.preventDefault();
-                return;
-            }
-            formWasSubmitted = true;
-        });
+        // Modo protegido (Cloudflare Turnstile + Worker, ver worker/LEIA-ME.md).
+        // Enquanto as duas constantes estiverem vazias, o formulário continua enviando direto ao Zoho.
+        const FORM_ENDPOINT = '';       // URL do Worker, ex.: https://formulario.SEU-USUARIO.workers.dev
+        const TURNSTILE_SITE_KEY = '';  // "Site key" do Turnstile (pública)
+        const protectedMode = Boolean(FORM_ENDPOINT && TURNSTILE_SITE_KEY);
+        const formError = document.getElementById('form-error');
+        const submitButton = form.querySelector('button[type="submit"]');
+        let turnstileWidgetId = null;
 
-        zohoIframe.addEventListener('load', () => {
-            if (!formWasSubmitted) return; // ignora o load inicial do iframe vazio
-            formWasSubmitted = false;
+        if (protectedMode) {
+            form.removeAttribute('action');
+            form.removeAttribute('target');
+            window.onTurnstileLoad = () => {
+                turnstileWidgetId = turnstile.render('#turnstile-box', { sitekey: TURNSTILE_SITE_KEY, language: 'pt-br' });
+            };
+            const tsScript = document.createElement('script');
+            tsScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';
+            tsScript.async = true;
+            document.head.appendChild(tsScript);
+        }
 
+        const showThankYou = () => {
             modal.classList.remove('hidden');
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
@@ -135,6 +142,52 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 form.reset();
             }, 500);
+        };
+
+        const showFormError = (message) => {
+            if (!formError) return;
+            formError.textContent = message;
+            formError.classList.remove('hidden');
+        };
+
+        form.addEventListener('submit', async (event) => {
+            // Honeypot anti-bot: campo invisível para humanos. Se veio preenchido, é bot — bloqueia o envio.
+            const honeypot = document.getElementById('website');
+            const tooFast = Date.now() - formLoadedAt < 4000;
+            if ((honeypot && honeypot.value.trim() !== '') || tooFast || !humanInteracted) {
+                event.preventDefault();
+                return;
+            }
+
+            if (!protectedMode) {
+                formWasSubmitted = true;
+                return;
+            }
+
+            event.preventDefault();
+            if (formError) formError.classList.add('hidden');
+            const data = new FormData(form);
+            if (!data.get('cf-turnstile-response')) {
+                showFormError('Confirme a verificação de segurança antes de enviar.');
+                return;
+            }
+            submitButton.disabled = true;
+            try {
+                const response = await fetch(FORM_ENDPOINT, { method: 'POST', body: data });
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                showThankYou();
+            } catch (error) {
+                showFormError('Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.');
+            } finally {
+                submitButton.disabled = false;
+                if (turnstileWidgetId !== null) turnstile.reset(turnstileWidgetId);
+            }
+        });
+
+        zohoIframe.addEventListener('load', () => {
+            if (!formWasSubmitted) return; // ignora o load inicial do iframe vazio
+            formWasSubmitted = false;
+            showThankYou();
         });
 
         const closeModal = () => {

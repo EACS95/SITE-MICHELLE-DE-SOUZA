@@ -781,6 +781,10 @@
                                     required></textarea>
                             </div>
 
+                            <!-- Verificação "não sou um robô" (Cloudflare Turnstile) — só aparece quando configurada em js/script.js -->
+                            <div id="turnstile-box" class="flex justify-center"></div>
+                            <p id="form-error" role="alert" class="hidden text-sm text-red-600 text-center"></p>
+
                             <!-- Honeypot anti-bot: campo invisível para humanos, bots que preenchem tudo caem aqui -->
                             <div style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
                                 <label for="website">Não preencha este campo</label>
