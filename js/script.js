@@ -7,7 +7,6 @@ const mobileMenu = document.querySelector('.mobile-menu');
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('animate__fadeIn');
     });
 }
 
@@ -20,31 +19,33 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
 });
 
 // =======================
-// LÓGICA DAS ANIMAÇÕES DE ROLAGEM
+// REVELAÇÃO AO ROLAR A PÁGINA (substitui o animate.css)
+// A classe "js-ready" só é adicionada se o JS realmente rodar — sem ela, o
+// CSS mantém tudo visível por padrão (ver .reveal em css/style.css).
 // =======================
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.animate__animated');
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (elementPosition < windowHeight - 100) {
-            // Adiciona a classe apenas se ela ainda não foi adicionada para evitar re-animação
-            if (!element.classList.contains('start-animation')) {
-                element.classList.add('start-animation');
-            }
-        }
-    });
-};
+document.documentElement.classList.add('js-ready');
 
-window.addEventListener('scroll', animateOnScroll);
+const revealElements = document.querySelectorAll('.reveal');
+if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+} else {
+    // Sem suporte a IntersectionObserver: mostra tudo direto, sem esperar rolagem.
+    revealElements.forEach(el => el.classList.add('reveal-active'));
+}
 
 // =======================
 // LÓGICA QUE RODA APÓS O CARREGAMENTO DA PÁGINA
 // =======================
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Executa a animação para elementos já visíveis no carregamento
-    animateOnScroll();
-
     // 2. LÓGICA DO BOTÃO "VOLTAR AO TOPO"
     const backToTopButton = document.getElementById('backToTop');
     if (backToTopButton) {
@@ -69,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. LÓGICA DO CONSENTIMENTO DE COOKIES
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptCookies = document.getElementById('acceptCookies');
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+        loadElfsightWidget();
+    }
     if (cookieConsent && acceptCookies) {
         if (!localStorage.getItem('cookieConsent')) {
             setTimeout(() => {
@@ -76,23 +80,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 cookieConsent.classList.add('translate-y-0');
             }, 2000);
         }
-        
+
         acceptCookies.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieConsent.classList.add('translate-y-full');
             setTimeout(() => {
                 cookieConsent.classList.add('hidden');
             }, 300);
-            // loadGoogleAnalytics(); 
+            loadElfsightWidget();
+            // loadGoogleAnalytics();
         });
     }
 
     // 4. LÓGICA DO MODAL DE AGRADECIMENTO
+    // Espera o iframe oculto carregar a resposta do Zoho antes de mostrar "Obrigado",
+    // em vez de mostrar a mensagem instantaneamente ao clicar em enviar.
     const form = document.getElementById('form');
     const modal = document.getElementById('thankYouModal');
     const closeModalButton = document.getElementById('closeModalButton');
-    if (form && modal && closeModalButton) {
-        form.addEventListener('submit', () => {
+    const zohoIframe = document.getElementById('zoho_iframe');
+    if (form && modal && closeModalButton && zohoIframe) {
+        let formWasSubmitted = false;
+
+        // Anti-bot (camadas extras além do honeypot):
+        // 1) tempo mínimo entre carregar a página e enviar; 2) exige interação real (teclado/toque/mouse).
+        // Isto só barra robôs que usam um navegador de verdade; quem faz POST direto na URL do Zoho
+        // precisa ser barrado no próprio Zoho (captcha).
+        const formLoadedAt = Date.now();
+        let humanInteracted = false;
+        ['keydown', 'pointerdown', 'touchstart'].forEach(evt => {
+            form.addEventListener(evt, () => { humanInteracted = true; }, { once: true, passive: true });
+        });
+
+        form.addEventListener('submit', (event) => {
+            // Honeypot anti-bot: campo invisível para humanos. Se veio preenchido, é bot — bloqueia o envio.
+            const honeypot = document.getElementById('website');
+            const tooFast = Date.now() - formLoadedAt < 4000;
+            if ((honeypot && honeypot.value.trim() !== '') || tooFast || !humanInteracted) {
+                event.preventDefault();
+                return;
+            }
+            formWasSubmitted = true;
+        });
+
+        zohoIframe.addEventListener('load', () => {
+            if (!formWasSubmitted) return; // ignora o load inicial do iframe vazio
+            formWasSubmitted = false;
+
             modal.classList.remove('hidden');
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
@@ -111,16 +145,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         };
         closeModalButton.addEventListener('click', closeModal);
+
+        // Fecha clicando fora do conteúdo do modal
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) closeModal();
+        });
+
+        // Fecha com a tecla Esc
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
     }
 
     // 5. LÓGICA DA MÁSCARA DE TELEFONE
     const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
+    if (phoneInput && typeof IMask !== 'undefined') {
         const phoneMask = IMask(phoneInput, {
-            mask: '(00) 00000-0000'
+            mask: [
+                { mask: '(00) 0000-0000' },
+                { mask: '(00) 00000-0000' }
+            ],
+            dispatch: (appended, dynamicMasked) => {
+                const digits = (dynamicMasked.value + appended).replace(/\D/g, '');
+                return dynamicMasked.compiledMasks[digits.length > 10 ? 1 : 0];
+            }
         });
     }
+
+    // 6. LINKS "CONSULTAR" E TAGS DE SERVIÇO (Áreas de Atuação)
+    // Ao clicar em "Direito de Família", "Inventário", "Divórcio" etc., o
+    // assunto do formulário já vem selecionado e a mensagem do WhatsApp já
+    // menciona o que a pessoa procura — ela não precisa explicar do zero.
+    const subjectSelect = document.getElementById('subject');
+    const messageField = document.getElementById('message');
+    const contactWhatsappLink = document.getElementById('contact-whatsapp-link');
+
+    document.querySelectorAll('.topic-tag').forEach(link => {
+        link.addEventListener('click', () => {
+            const area = link.getAttribute('data-area');
+            const topic = link.getAttribute('data-topic') || area;
+
+            if (subjectSelect && area) {
+                subjectSelect.value = area;
+            }
+            if (messageField && !messageField.value.trim()) {
+                messageField.value = `Tenho interesse em: ${topic}.`;
+            }
+            if (contactWhatsappLink && topic) {
+                const text = `Olá Dra. Michelle, gostaria de saber mais sobre ${topic}`;
+                contactWhatsappLink.href = `https://wa.me/5561993149693?text=${encodeURIComponent(text)}`;
+            }
+        });
+    });
 });
+
+// =======================
+// WIDGET DE DEPOIMENTOS (ELFSIGHT) — só carrega após aceite de cookies
+// =======================
+let elfsightLoaded = false;
+function loadElfsightWidget() {
+    if (elfsightLoaded || !document.getElementById('elfsight-widget')) return;
+    elfsightLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.setAttribute('data-use-service-core', '');
+    script.defer = true;
+    document.body.appendChild(script);
+}
 
 // =======================
 // FUNÇÃO AUXILIAR GOOGLE ANALYTICS

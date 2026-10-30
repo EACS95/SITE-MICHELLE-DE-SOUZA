@@ -7,19 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <!-- Viewport para Responsividade -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
   
   <!-- Título e Descrição -->
-  <title>Michelle de Souza | Advogada em Luziânia, DF</title>
-  <meta name="description" content="Advogada especialista em Direito Imobiliário, Inventário, Direito de Família, Direito Civil e Direito do Consumidor. Atendimento presencial em Luziânia, Brasília, Entorno do DF e online para todo o Brasil." />
-  <!-- Meta keywords pouco relevantes, pode manter se quiser -->
-  <meta name="keywords" content="Advogada em Luziânia, Advogada em Brasília, Advogada DF, Direito Imobiliário, Inventário, Direito de Família, Direito Civil, Direito do Consumidor, Atendimento Jurídico Online, Michelle de Souza" />
+  <title>Michelle de Souza | Advogada em Luziânia, GO</title>
+  <meta name="description" content="Advogada em Direito de Família, Imobiliário, Trabalho e Civil/Consumidor. Atendimento presencial em Luziânia-GO, Entorno do DF e online em todo o Brasil." />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="Michelle de Souza - Advogada Especialista" />
-  
+  <meta name="author" content="Michelle de Souza - Advogada" />
+
   <!-- URL Canônico -->
   <link rel="canonical" href="https://www.michelledesouza.com.br/" />
-  
+
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
@@ -27,37 +25,39 @@
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="img/favicon/site.webmanifest" />
   <meta name="theme-color" content="#A77B43" />
-  
+
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Michelle de Souza | Advogada em Luziânia, DF" />
-  <meta property="og:description" content="Especialista em Direito Imobiliário, Inventário, Direito de Família, Civil e Consumidor. Atende em Luziânia, DF e online em todo o Brasil." />
+  <meta property="og:title" content="Michelle de Souza | Advogada em Luziânia, GO" />
+  <meta property="og:description" content="Atuação em Direito de Família, Imobiliário, Trabalho, Civil e do Consumidor. Atende em Luziânia-GO e online em todo o Brasil." />
   <meta property="og:url" content="https://www.michelledesouza.com.br/" />
   <meta property="og:image" content="https://www.michelledesouza.com.br/img/og-image.jpg" />
-  <meta property="og:image:alt" content="Michelle de Souza - Advogada Especialista em Família, Civil, Consumidor e Imobiliário" />
-  
+  <meta property="og:image:alt" content="Michelle de Souza - Advogada Especialista em Família, Imobiliário, Trabalho, Civil e Consumidor" />
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Michelle de Souza | Advogada em Luziânia, DF" />
-<meta name="twitter:description" content="Especialista em Direito Imobiliário, Inventário, Direito de Família, Civil e Consumidor. Atende presencialmente e online." />
+  <meta name="twitter:title" content="Michelle de Souza | Advogada em Luziânia, GO" />
+<meta name="twitter:description" content="Atuação em Direito de Família, Imobiliário, Trabalho, Civil e do Consumidor. Atende presencialmente e online." />
   <meta name="twitter:image" content="https://www.michelledesouza.com.br/img/og-image.jpg" />
-  
+
   <!-- Fonts e Estilos -->
   <!-- Prefetch/preconnect para performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-  <!-- Fonte Cinzel - recomendação: servir localmente para melhor performance -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
-  
+
+  <!-- Fontes usadas de fato no site: Playfair Display (títulos) e Inter (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <!-- CSS principal -->
   <link rel="stylesheet" href="css/style.css" />
-  
+
   <!-- Scripts externos (carregamento assíncrono para não travar renderização) -->
   <script src="https://cdn.tailwindcss.com" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- IMask (máscara do campo telefone) e script próprio do site -->
+  <script src="https://cdn.jsdelivr.net/npm/imask@7.6.1/dist/imask.min.js" defer></script>
+  <script src="js/script.js" defer></script>
   
   <!-- Dados Estruturados Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -65,7 +65,9 @@
     "@context": "https://schema.org",
     "@type": "Attorney",
     "name": "Michelle de Souza",
-    "description": "Advogada especializada em Direito Imobiliário, Inventário, Direito de Família, Civil e do Consumidor. Atendimento presencial em Luziânia e online para todo o Brasil.",
+    "legalName": "Michelle Campos Costa de Souza Sociedade Individual de Advocacia",
+    "taxID": "69.767.085/0001-34",
+    "description": "Advogada atuante em Direito de Família (inventário, divórcio, pensão alimentícia), Direito Imobiliário, Direito do Trabalho e Direito Civil e do Consumidor. Atendimento presencial em Luziânia e online para todo o Brasil.",
     "image": "https://www.michelledesouza.com.br/img/MichelleDeSouza-Advogada.jpg",
     "url": "https://www.michelledesouza.com.br/",
     "telephone": "+5561993149693",
@@ -73,7 +75,7 @@
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Rua Dr. Ézio Carneiro, Quadra 18 - Lote 13",
+      "streetAddress": "Rua Dr. Ézio Carneiro, Quadra 18 - Lote 13 - 2º andar",
       "addressLocality": "Luziânia",
       "addressRegion": "GO",
       "postalCode": "72801-060",
@@ -101,7 +103,7 @@
     ],
     "sameAs": [
       "https://wa.me/5561993149693",
-      "https://www.facebook.com/michellesouzaadv",
+      "https://www.facebook.com/michelledesouza.adv",
       "https://www.instagram.com/michelledesouza.adv/",
       "https://www.linkedin.com/in/michelle-c-c-souza/"
     ]
@@ -118,12 +120,12 @@
             <div class="flex justify-between items-center h-20">
                 <div id="logo" class="flex-shrink-0 ">
                     <a href="#" class="text-2xl font-bold text-gray-800 flex items-center">
-                        <img src="img/Logo-Michelle-de-Souza.png" alt="Logo" class="h-12 mr-2">
+                        <img src="img/Logo-Michelle-de-Souza.png" alt="Logo Michelle de Souza Advogada" width="51" height="51" class="h-12 mr-2">
                         <div class="flex flex-col items-center leading-tight">
                             <span class="font-titulo text-xl font-semibold text-[#2C3E50]">
                                 Michelle de Souza
                             </span>
-                            <span class="font-titulo text-sm text-[#AAA9AD]">
+                            <span class="font-titulo text-sm text-gray-500">
                                 Advogada
                             </span>
                         </div>
@@ -161,47 +163,316 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
-        class="hero-section text-white py-32 relative overflow-hidden bg-cover bg-center bg-[url('img/MichelleDeSouza-Advogada.jpg')]">
-        <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="font-titulo text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">
-                Michelle de Souza
-            </h1>
-            <h2
-                class="font-titulo text-2xl md:text-3xl font-semibold mb-6 animate__animated animate__fadeInDown animate__delay-1s">
-                Advogada Especialista
-            </h2>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate__animated animate__fadeIn animate__delay-2s">
-                Defesa estratégica dos seus direitos, com atendimento presencial em Luziânia, Entorno de Brasília e
-                online para todo o Brasil.
-            </p>
-            <div class="animate__animated animate__fadeInUp animate__delay-3s">
-                <a href="#contato"
-                    class="btn-primary bg-[#A77B43] hover:bg-[#DEBE6D] text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block shadow-lg">
-                    Agende uma Consulta
-                </a>
+    <section class="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center">
+
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-px bg-[#A77B43] inline-block"></span>
+                        <span class="font-semibold text-xs tracking-[0.2em] uppercase text-gray-500">Advocacia em Luziânia, GO</span>
+                    </div>
+                    <h1 class="font-titulo text-4xl md:text-6xl font-bold text-[#2C3E50] leading-tight mb-6">
+                        Defesa estratégica dos seus direitos.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-xl mb-10">
+                        Atendimento presencial em Luziânia, Entorno de Brasília e online para todo o Brasil, com
+                        ética, transparência e comprometimento em cada caso.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#contato"
+                            class="bg-[#A77B43] hover:bg-[#DEBE6D] text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block shadow-lg">
+                            Agende uma Consulta
+                        </a>
+                        <a href="https://wa.me/5561993149693?text=Olá%20Dra.%20Michelle,%20gostaria%20de%20agendar%20uma%20consulta"
+                            target="_blank" rel="noopener noreferrer"
+                            class="border-2 border-[#2C3E50] text-[#2C3E50] hover:bg-[#2C3E50] hover:text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
+                            Fale pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center">
+                    <svg viewBox="0 0 100 100" aria-hidden="true"
+                        class="absolute w-4/5 h-4/5 opacity-[0.07] text-[#2C3E50]" fill="none" stroke="currentColor"
+                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="50" y1="6" x2="50" y2="84" />
+                        <circle cx="50" cy="6" r="3" />
+                        <line x1="18" y1="24" x2="82" y2="24" />
+                        <line x1="18" y1="24" x2="9" y2="50" />
+                        <line x1="18" y1="24" x2="27" y2="50" />
+                        <path d="M5 50 a13 11 0 0 0 26 0" />
+                        <line x1="82" y1="24" x2="73" y2="50" />
+                        <line x1="82" y1="24" x2="91" y2="50" />
+                        <path d="M69 50 a13 11 0 0 0 26 0" />
+                        <path d="M36 84 h28" />
+                        <path d="M50 84 v9" />
+                        <path d="M32 96 h36" />
+                    </svg>
+
+                    <div
+                        class="relative z-10 bg-white border border-gray-200 shadow-2xl rounded-lg px-12 pt-11 pb-10 flex flex-col items-center gap-6 max-w-[400px] w-full">
+                        <div class="relative w-56 h-56 rounded-full overflow-hidden border-4 border-white shadow-[0_0_0_1.5px_rgba(44,62,80,0.2)]">
+                            <img src="img/MichelleDeSouza-Retrato.jpg" alt="Dra. Michelle de Souza" width="760"
+                                height="760" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-center">
+                            <div class="font-titulo text-xl font-bold text-[#2C3E50]">Michelle de Souza</div>
+                            <div class="text-sm text-gray-500 tracking-wide mt-1">OAB/DF 65.271 · OAB/GO 67.320</div>
+                        </div>
+                        <hr class="w-full border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-14 h-14 rounded-full bg-[#A77B43] text-white flex items-center justify-center font-titulo font-black text-xl flex-shrink-0">
+                                6+
+                            </div>
+                            <span class="text-xs tracking-wider uppercase text-gray-500 leading-tight max-w-[110px]">Anos
+                                de Experiência</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <!-- Floating elements -->
-        <div
-            class="absolute bottom-10 left-10 w-16 h-16 bg-white bg-opacity-10 rounded-full animate__animated animate__fadeIn animate__delay-3s floating">
-        </div>
-        <div class="absolute top-20 right-20 w-12 h-12 bg-white bg-opacity-10 rounded-full animate__animated animate__fadeIn animate__delay-4s floating"
-            style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-8 h-8 bg-white bg-opacity-10 rounded-full animate__animated animate__fadeIn animate__delay-5s floating"
-            style="animation-delay: 1.5s;"></div>
     </section>
 
 
+    <!-- Practice Areas -->
+    <section id="areas" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-px bg-[#A77B43] inline-block"></span>
+                        <span class="font-semibold text-xs tracking-[0.2em] uppercase text-gray-500">Áreas de Atuação</span>
+                    </div>
+                    <h2 class="font-titulo text-3xl font-bold text-[#2C3E50]">Onde posso ajudar você</h2>
+                </div>
+                <p class="text-gray-600 max-w-sm">Atuo em diversas áreas do direito para oferecer a solução jurídica
+                    adequada à sua necessidade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2">
+                <!-- Family Law -->
+                <div class="flex gap-6 py-9 md:pr-10 border-b border-gray-200 md:border-r">
+                    <span
+                        class="font-titulo font-bold text-white bg-[#A77B43] w-12 h-12 rounded flex items-center justify-center flex-shrink-0">01</span>
+                    <div>
+                        <h3 class="font-titulo text-xl font-bold text-[#2C3E50] mb-2">Direito de Família</h3>
+                        <p class="text-gray-600">Da separação ao pós-divórcio, atuo em cada etapa com atenção ao lado
+                            humano da causa.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="#contato" data-area="Direito de Família" data-topic="Inventário"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Inventário</a>
+                            <a href="#contato" data-area="Direito de Família" data-topic="Divórcio"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Divórcio</a>
+                            <a href="#contato" data-area="Direito de Família" data-topic="Guarda"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Guarda</a>
+                            <a href="#contato" data-area="Direito de Família" data-topic="Pensão Alimentícia"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Pensão
+                                Alimentícia</a>
+                            <a href="#contato" data-area="Direito de Família" data-topic="União Estável"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">União
+                                Estável</a>
+                            <a href="#contato" data-area="Direito de Família" data-topic="outras demandas de Direito de Família"
+                                class="topic-tag text-xs font-medium text-gray-500 border border-dashed border-gray-300 hover:border-[#A77B43] hover:text-[#A77B43] px-3 py-1.5 rounded-full transition">+
+                                Outras</a>
+                        </div>
+                        <a href="#contato" data-area="Direito de Família"
+                            class="topic-tag mt-4 inline-flex items-center gap-1 text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
+                            Consultar <i aria-hidden="true" class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Real Estate Law -->
+                <div class="flex gap-6 py-9 md:pl-10 border-b border-gray-200">
+                    <span
+                        class="font-titulo font-bold text-white bg-[#A77B43] w-12 h-12 rounded flex items-center justify-center flex-shrink-0">02</span>
+                    <div>
+                        <h3 class="font-titulo text-xl font-bold text-[#2C3E50] mb-2">Direito Imobiliário</h3>
+                        <p class="text-gray-600">Da regularização à defesa da posse, cuido da segurança jurídica do
+                            seu imóvel.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="#contato" data-area="Direito Imobiliário" data-topic="Regularização de Imóveis"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Regularização
+                                de Imóveis</a>
+                            <a href="#contato" data-area="Direito Imobiliário" data-topic="Usucapião"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Usucapião</a>
+                            <a href="#contato" data-area="Direito Imobiliário" data-topic="Contratos Imobiliários"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Contratos</a>
+                            <a href="#contato" data-area="Direito Imobiliário" data-topic="outras demandas de Direito Imobiliário"
+                                class="topic-tag text-xs font-medium text-gray-500 border border-dashed border-gray-300 hover:border-[#A77B43] hover:text-[#A77B43] px-3 py-1.5 rounded-full transition">+
+                                Outras</a>
+                        </div>
+                        <a href="#contato" data-area="Direito Imobiliário"
+                            class="topic-tag mt-4 inline-flex items-center gap-1 text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
+                            Consultar <i aria-hidden="true" class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Labor Law -->
+                <div class="flex gap-6 py-9 md:pr-10 md:border-r">
+                    <span
+                        class="font-titulo font-bold text-white bg-[#A77B43] w-12 h-12 rounded flex items-center justify-center flex-shrink-0">03</span>
+                    <div>
+                        <h3 class="font-titulo text-xl font-bold text-[#2C3E50] mb-2">Direito do Trabalho</h3>
+                        <p class="text-gray-600">Atendo trabalhadores e empresas em questões trabalhistas, com
+                            atenção aos prazos e às provas do caso.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="#contato" data-area="Direito do Trabalho" data-topic="Rescisão Indireta"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Rescisão
+                                Indireta</a>
+                            <a href="#contato" data-area="Direito do Trabalho" data-topic="Verbas Trabalhistas"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Verbas
+                                Trabalhistas</a>
+                            <a href="#contato" data-area="Direito do Trabalho" data-topic="FGTS"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">FGTS</a>
+                            <a href="#contato" data-area="Direito do Trabalho" data-topic="outras demandas de Direito do Trabalho"
+                                class="topic-tag text-xs font-medium text-gray-500 border border-dashed border-gray-300 hover:border-[#A77B43] hover:text-[#A77B43] px-3 py-1.5 rounded-full transition">+
+                                Outras</a>
+                        </div>
+                        <a href="#contato" data-area="Direito do Trabalho"
+                            class="topic-tag mt-4 inline-flex items-center gap-1 text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
+                            Consultar <i aria-hidden="true" class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Civil and Consumer Law -->
+                <div class="flex gap-6 py-9 md:pl-10">
+                    <span
+                        class="font-titulo font-bold text-white bg-[#A77B43] w-12 h-12 rounded flex items-center justify-center flex-shrink-0">04</span>
+                    <div>
+                        <h3 class="font-titulo text-xl font-bold text-[#2C3E50] mb-2">Direito Civil e do Consumidor</h3>
+                        <p class="text-gray-600">Contratos para pessoas físicas e empresas, cobranças e relações de
+                            consumo, evitando problemas antes que aconteçam.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <a href="#contato" data-area="Direito Civil e do Consumidor" data-topic="Contratos"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Contratos</a>
+                            <a href="#contato" data-area="Direito Civil e do Consumidor" data-topic="Cobranças"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Cobranças</a>
+                            <a href="#contato" data-area="Direito Civil e do Consumidor" data-topic="Compras e Serviços"
+                                class="topic-tag text-xs font-medium text-[#A77B43] bg-[#A77B43]/10 hover:bg-[#A77B43]/20 px-3 py-1.5 rounded-full transition">Compras
+                                e Serviços</a>
+                            <a href="#contato" data-area="Direito Civil e do Consumidor" data-topic="outras demandas de Direito Civil e do Consumidor"
+                                class="topic-tag text-xs font-medium text-gray-500 border border-dashed border-gray-300 hover:border-[#A77B43] hover:text-[#A77B43] px-3 py-1.5 rounded-full transition">+
+                                Outras</a>
+                        </div>
+                        <a href="#contato" data-area="Direito Civil e do Consumidor"
+                            class="topic-tag mt-4 inline-flex items-center gap-1 text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
+                            Consultar <i aria-hidden="true" class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section id="diferenciais" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">POR QUE CONTRATAR MEUS SERVIÇOS?</h2>
+                <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Conheça os diferenciais que tornam meu trabalho único e
+                    eficiente</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Compromisso com a sua causa</h3>
+                    <p class="text-gray-600">Dedicação integral a cada caso, buscando sempre a melhor solução jurídica,
+                        com base em um atendimento personalizado e com foco nas suas necessidades.</p>
+                </div>
+
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Experiência sólida e qualificação</h3>
+                    <p class="text-gray-600">Anos de experiência no campo jurídico e constante atualização sobre as
+                        mudanças na legislação, capacitada para oferecer soluções eficazes e inovadoras.</p>
+                </div>
+
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ética e transparência</h3>
+                    <p class="text-gray-600">Trabalho com total transparência, informando sobre todas as etapas do
+                        processo, as opções disponíveis e as implicações jurídicas.</p>
+                </div>
+
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Atendimento humanizado</h3>
+                    <p class="text-gray-600">Compreendo que cada caso é único. Meu objetivo é ouvir atentamente sua
+                        situação e atuar de maneira empática e dedicada.</p>
+                </div>
+
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Dedicação em cada etapa</h3>
+                    <p class="text-gray-600">Atuo com empenho e atenção aos detalhes em cada etapa do seu caso, seja
+                        na resolução de conflitos, na proteção dos seus direitos ou na defesa de sua posição jurídica.
+                    </p>
+                </div>
+
+                <div
+                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
+                    <div class="feature-icon w-14 h-14 rounded-full bg-[#A77B43]/10 flex items-center justify-center text-[#A77B43] mb-5">
+                        <i aria-hidden="true" class="fas text-2xl fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Segurança jurídica</h3>
+                    <p class="text-gray-600">Ofereço tranquilidade em meio a desafios legais, com uma advogada
+                        comprometida, experiente e pronta para lutar pelos seus direitos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- Depoimentos Google -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">DEPOIMENTOS DE CLIENTES</h2>
+                <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Veja o que meus clientes têm a dizer sobre meu trabalho e minha atuação profissional.
+                </p>
+            </div>
+
+            <!-- Widget do Google Meu Negócio: script carregado só após aceite de cookies (ver js/script.js) -->
+            <div class="max-w-6xl mx-auto">
+                <div id="elfsight-widget" class="elfsight-app-6bbac6ce-bb9d-477c-a23c-8296f3901f25" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- About Section -->
-    <section id="sobre" class="py-20 bg-white text-justify">
+    <section id="sobre" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 animate__animated animate__fadeInLeft">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 reveal">
                     <div class="relative">
                         <img src="img/MichelleDeSouza-Advogada.jpg" alt="Dra. Michelle de Souza" loading="lazy"
+                            width="1365" height="2048"
                             class="rounded-lg shadow-xl w-4/5 transform transition duration-500 hover:scale-105 mx-auto">
 
                         <div class="absolute -bottom-5 -right-5 bg-[#A77B43] text-white p-4 rounded-lg shadow-lg">
@@ -210,7 +481,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 animate__animated animate__fadeInRight">
+                <div class="lg:w-1/2 reveal">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800 relative inline-block">
                         <span class="relative z-10">SOBRE A DRA. MICHELLE DE SOUZA</span>
                         <span class="absolute bottom-0 left-0 w-full h-2 bg-[#A77B43 ] z-0"></span>
@@ -246,119 +517,9 @@
                             <h3 class="text-xl font-bold mb-3 text-[#A77B43] flex items-center">
                                 <i aria-hidden="true" class="fas fa-eye mr-2"></i> VISÃO
                             </h3>
-                            <p class="text-gray-600">Ser reconhecida como uma profissional referência no campo jurídico,
-                                consolidando a confiança e a excelência nos serviços prestados.</p>
+                            <p class="text-gray-600">Ser reconhecida pela confiança e pela excelência dos serviços
+                                jurídicos prestados aos meus clientes.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Practice Areas -->
-    <section id="areas" class="py-20 bg-gray-50 text-justify">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate__animated animate__fadeIn">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">ÁREAS DE ATUAÇÃO</h2>
-                <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Especializada em diversas áreas do direito para oferecer
-                    a melhor solução jurídica para sua necessidade.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Civil Law -->
-                <div
-                    class="practice-area-card bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp">
-                    <div class="h-48 overflow-hidden">
-                        <img src="img/Direito-Civil.jpg" alt="Ilustração representando Direito Civil" loading="lazy"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-[#A77B43] p-2 rounded-full mr-3">
-                                <i aria-hidden="true" class="fas fa-file-contract text-[#ffffff]"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Direito Civil</h3>
-                        </div>
-                        <p class="text-gray-600">Elaboração e revisão de contratos cíveis, consultoria e pareceres sobre
-                            cláusulas contratuais, responsabilidade civil (danos morais e materiais), juizados especiais
-                            e ações indenizatórias.</p>
-                        <a href="#contato"
-                            class="mt-4 inline-block text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
-                            Consultar <i aria-hidden="true" class="fas fa-arrow-right ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Family Law -->
-                <div
-                    class="practice-area-card bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="h-48 overflow-hidden">
-                        <img src="img/Direito-Familia.jpg" alt="Ilustração representando Direito de Família"
-                            loading="lazy" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-[#A77B43] p-2 rounded-full mr-3">
-                                <i aria-hidden="true" class="fas fa-home text-[#ffffff]"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Direito de Família</h3>
-                        </div>
-                        <p class="text-gray-600">Atuação em separação judicial e extrajudicial, nulidade e anulação de
-                            casamento, reconhecimento e dissolução judicial de união estável. Assessoria para alteração
-                            de regime de bens.</p>
-                        <a href="#contato"
-                            class="mt-4 inline-block text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
-                            Consultar <i aria-hidden="true" class="fas fa-arrow-right ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Real Estate Law -->
-                <div
-                    class="practice-area-card bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp animate__delay-2s">
-                    <div class="h-48 overflow-hidden">
-                        <img src="img/Direito-Imobiliario.jpg" alt="Ilustração representando Direito Imobiliário"
-                            loading="lazy" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-[#A77B43] p-2 rounded-full mr-3">
-                                <i aria-hidden="true" class="fas fa-building text-[#ffffff]"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Direito Imobiliário</h3>
-                        </div>
-                        <p class="text-gray-600">Consultoria em transações imobiliárias urbanas e rurais, regularização
-                            de imóveis e registros nos órgãos competentes. Atuação em ações possessórias, como
-                            reintegração, imissão e manutenção de posse.</p>
-                        <a href="#contato"
-                            class="mt-4 inline-block text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
-                            Consultar <i aria-hidden="true" class="fas fa-arrow-right ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Consumer Law -->
-                <div
-                    class="practice-area-card bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp animate__delay-3s">
-                    <div class="h-48 overflow-hidden">
-                        <img src="img/Direito-do-Consumidor.jpg" alt="Ilustração representando Direito do Consumidor"
-                            loading="lazy" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-3">
-                            <div class="bg-[#A77B43] p-2 rounded-full mr-3">
-                                <i aria-hidden="true" class="fas fa-shopping-cart text-[#ffffff]"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Direito do Consumidor</h3>
-                        </div>
-                        <p class="text-gray-600">Orientação e consultoria para empresas, incluindo elaboração e análise
-                            de contratos de bens e serviços. Defesa em processos judiciais e administrativos
-                            relacionados a relações de consumo.</p>
-                        <a href="#contato"
-                            class="mt-4 inline-block text-[#A77B43] hover:text-[#DEBE6D] font-medium transition">
-                            Consultar <i aria-hidden="true" class="fas fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -370,91 +531,17 @@
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="container mx-auto px-6 text-center relative z-10">
             <div
-                class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-8 md:p-12 shadow-xl animate__animated animate__zoomIn">
+                class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-8 md:p-12 shadow-xl reveal">
                 <i aria-hidden="true" class="fas fa-quote-left text-red-300 text-4xl mb-6"></i>
                 <blockquote>
                     <p class="text-2xl md:text-3xl italic mb-6">"Com a espada da verdade e os olhos vendados, a Deusa da
                         Justiça nos ensina que o direito deve ser igual para todos."</p>
-                    <p class="text-xl">Com foco, estratégia e dedicação, analiso cada detalhe com precisão para garantir os melhores resultados para você.
+                    <p class="text-xl">Com foco, estratégia e dedicação, analiso cada detalhe do seu caso com atenção e
+                        compromisso.
                         <br>
-                        <strong class="text-[#A77B43]">Vamos juntos conquistar a justiça que você merece!</strong>
+                        <strong class="text-[#A77B43]">Conte comigo para defender seus direitos com seriedade.</strong>
 </p>
                 </blockquote>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Me -->
-    <section id="diferenciais" class="py-20 bg-white text-justify">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate__animated animate__fadeIn">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">POR QUE CONTRATAR MEUS SERVIÇOS?</h2>
-                <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Conheça os diferenciais que tornam meu trabalho único e
-                    eficiente</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Compromisso com a sua causa</h3>
-                    <p class="text-gray-600">Dedicação integral a cada caso, buscando sempre a melhor solução jurídica,
-                        com base em um atendimento personalizado e com foco nas suas necessidades.</p>
-                </div>
-
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Experiência sólida e qualificação</h3>
-                    <p class="text-gray-600">Anos de experiência no campo jurídico e constante atualização sobre as
-                        mudanças na legislação, capacitada para oferecer soluções eficazes e inovadoras.</p>
-                </div>
-
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ética e transparência</h3>
-                    <p class="text-gray-600">Trabalho com total transparência, informando sobre todas as etapas do
-                        processo, as opções disponíveis e as implicações jurídicas.</p>
-                </div>
-
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Atendimento humanizado</h3>
-                    <p class="text-gray-600">Compreendo que cada caso é único. Meu objetivo é ouvir atentamente sua
-                        situação e atuar de maneira empática e dedicada.</p>
-                </div>
-
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Resultados que fazem a diferença</h3>
-                    <p class="text-gray-600">Meu compromisso é buscar os melhores resultados possíveis para você, seja
-                        na resolução de conflitos, na proteção dos seus direitos ou na defesa de sua posição jurídica.
-                    </p>
-                </div>
-
-                <div
-                    class="feature-card bg-gray-50 p-8 rounded-lg border border-gray-200 transform transition duration-300 hover:shadow-lg">
-                    <div class="feature-icon text-[#A77B43] text-4xl mb-4">
-                        <i aria-hidden="true" class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Segurança jurídica</h3>
-                    <p class="text-gray-600">Ofereço tranquilidade em meio a desafios legais, com uma advogada
-                        comprometida, experiente e pronta para lutar pelos seus direitos.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -462,7 +549,7 @@
     <!-- INÍCIO DA SEÇÃO DE ABRANGÊNCIA -->
     <section id="abrangencia" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate__animated animate__fadeIn">
+            <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">
                     Atendimento Jurídico Presencial e Online em Todo o Brasil
                 </h2>
@@ -483,7 +570,7 @@
                             <i class="fas fa-map-marked-alt text-[#A77B43] text-5xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">
-                            Atendimento Regional — Presencial
+                            Atendimento Regional Presencial
                         </h3>
                         <p class="text-gray-600 mb-4 text-center">
                             Ofereço atendimento jurídico presencial em <strong>Luziânia-GO</strong>, <strong>Luziânia
@@ -520,7 +607,7 @@
                             <i class="fas fa-globe-americas text-[#A77B43] text-5xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">
-                            Atendimento Online — Todo o Brasil
+                            Atendimento Online em Todo o Brasil
                         </h3>
                         <p class="text-gray-600 text-center mb-4">
                             A tecnologia permite que eu atenda clientes em qualquer lugar do Brasil. Através de
@@ -528,7 +615,7 @@
                             com a mesma segurança e qualidade do atendimento presencial.
                         </p>
                         <p class="text-[#A77B43] font-semibold text-center">
-                            Seu direito não tem fronteiras. Conte comigo, onde você estiver.
+                            Onde você estiver, conte comigo.
                         </p>
                     </div>
                 </div>
@@ -539,40 +626,18 @@
     <!-- FIM DA SEÇÃO DE ABRANGÊNCIA -->
 
 
-    <!-- Testimonials -->
-    <!-- Depoimentos Google -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate__animated animate__fadeIn">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">DEPOIMENTOS DE CLIENTES</h2>
-                <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    Veja o que meus clientes têm a dizer sobre meu trabalho e minha atuação profissional.
-                </p>
-            </div>
-
-            <!-- Widget do Google Meu Negócio -->
-            <div class="max-w-6xl mx-auto">
-                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-                <div class="elfsight-app-6bbac6ce-bb9d-477c-a23c-8296f3901f25" data-elfsight-app-lazy></div>
-            </div>
-        </div>
-    </section>
-
-
-
     <!-- Contact Section -->
     <section id="contato" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate__animated animate__fadeIn">
+            <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">ENTRE EM CONTATO</h2>
                 <div class="w-20 h-1 bg-[#A77B43] mx-auto"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Estou à disposição para esclarecer suas dúvidas e
-                    oferecer a melhor solução para seu caso</p>
+                    buscar a solução mais adequada para o seu caso</p>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-10">
-                <div class="lg:w-1/2 animate__animated animate__fadeInLeft">
+                <div class="lg:w-1/2 reveal">
                     <div class="bg-gray-50 p-8 rounded-lg shadow-md">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Informações de Contato</h3>
 
@@ -582,7 +647,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800">Endereço</h4>
-                                <p class="text-gray-600">Rua Dr. Ézio Carneiro, Quadra 18 - Lote 13</p>
+                                <p class="text-gray-600">Rua Dr. Ézio Carneiro, Quadra 18 - Lote 13 - 2º andar</p>
                                 <p class="text-gray-600">St. Aeroporto (centro), Luziânia - GO, 72801-060</p>
                             </div>
                         </div>
@@ -643,7 +708,7 @@
                     </div>
                 </div>
 
-                <div class="lg:w-1/2 animate__animated animate__fadeInRight">
+                <div class="lg:w-1/2 reveal">
                     <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
 
                         <!-- Formulário que envia os dados para a Zoho -->
@@ -693,10 +758,10 @@
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A77B43] transition"
                                     required>
                                     <option value="">Selecione o assunto</option>
-                                    <option value="Direito Civil">Direito Civil</option>
-                                    <option value="Direito Imobiliário">Direito Imobiliário</option>
                                     <option value="Direito de Família">Direito de Família</option>
-                                    <option value="Direito do Consumidor">Direito do Consumidor</option>
+                                    <option value="Direito Imobiliário">Direito Imobiliário</option>
+                                    <option value="Direito do Trabalho">Direito do Trabalho</option>
+                                    <option value="Direito Civil e do Consumidor">Direito Civil e do Consumidor</option>
                                     <option value="Outro Assunto">Outro Assunto</option>
                                 </select>
                             </div>
@@ -710,6 +775,12 @@
                                     required></textarea>
                             </div>
 
+                            <!-- Honeypot anti-bot: campo invisível para humanos, bots que preenchem tudo caem aqui -->
+                            <div style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+                                <label for="website">Não preencha este campo</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
                             <!-- Botão de Envio -->
                             <button type="submit"
                                 class="w-full bg-[#A77B43] hover:bg-[#DEBE6D] text-white font-bold py-3 px-6 rounded-lg transition duration-300 mt-4">
@@ -721,7 +792,9 @@
 
                         <div class="mt-6 text-center">
                             <p class="text-gray-600 mb-3">Ou se preferir:</p>
-                            <a href="https://wa.me/5561993149693?text=Olá%20Dra.%20Michelle,%20gostaria%20de%20agendar%20uma%20consulta"
+                            <a id="contact-whatsapp-link"
+                                href="https://wa.me/5561993149693?text=Olá%20Dra.%20Michelle,%20gostaria%20de%20agendar%20uma%20consulta"
+                                target="_blank" rel="noopener noreferrer"
                                 class="w-full inline-flex items-center  justify-center  bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                                 <i aria-hidden="true" class="fab fa-whatsapp mr-2 text-xl"></i> Fale pelo WhatsApp
                             </a>
@@ -730,9 +803,9 @@
                 </div>
             </div>
 
-            <div class="mt-16 animate__animated animate__fadeIn">
+            <div class="mt-16 reveal">
                 <div class="h-96 bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                    <iframe
+                    <iframe title="Localização do escritório de Michelle de Souza Advogada em Luziânia-GO"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4942.476549823081!2d-47.956688299999996!3d-16.2566627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93599bded83ea795%3A0x4d5bd4c34f9e9ed0!2sMichelle%20de%20Souza%20%7C%20Advogada!5e1!3m2!1spt-BR!2sbr!4v1750476357961!5m2!1spt-BR!2sbr"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
@@ -745,7 +818,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-[#2C3E50] text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
@@ -753,18 +826,20 @@
                         <i aria-hidden="true" class="fas fa-balance-scale-left text-[#A77B43] mr-2"></i> Michelle de
                         Souza
                     </h3>
-                    <p class="text-gray-400 text-justify">Advogada especializada em Direito Civil, Família, Imobiliário
-                        e Consumidor,
+                    <p class="text-gray-400">Advogada atuante em Direito de Família, Imobiliário,
+                        Trabalho, Civil e do Consumidor,
                         oferecendo soluções jurídicas personalizadas em Luziânia-GO.</p>
+                    <p class="text-gray-500 text-sm mt-3">OAB/DF 65.271 · OAB/GO 67.320</p>
+                    <p class="text-gray-500 text-sm mt-1">Michelle Campos Costa de Souza Sociedade Individual de Advocacia · CNPJ 69.767.085/0001-34</p>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">sobre</a></li>
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre</a></li>
                         <li><a href="#areas" class="text-gray-400 hover:text-white transition">Áreas de Atuação</a>
                         </li>
-                        <li><a href="#diferenciais" class="text-gray-400 hover:text-white transition">diferenciais</a>
+                        <li><a href="#diferenciais" class="text-gray-400 hover:text-white transition">Diferenciais</a>
                         </li>
                         <li><a href="#contato" class="text-gray-400 hover:text-white transition">Contato</a></li>
                     </ul>
@@ -773,12 +848,13 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Áreas de Atuação</h3>
                     <ul class="space-y-2">
-                        <li><a href="#areas" class="text-gray-400 hover:text-white transition">Direito Civil</a></li>
                         <li><a href="#areas" class="text-gray-400 hover:text-white transition">Direito de Família</a>
                         </li>
                         <li><a href="#areas" class="text-gray-400 hover:text-white transition">Direito
                                 Imobiliário</a></li>
                         <li><a href="#areas" class="text-gray-400 hover:text-white transition">Direito do
+                                Trabalho</a></li>
+                        <li><a href="#areas" class="text-gray-400 hover:text-white transition">Direito Civil e do
                                 Consumidor</a></li>
                     </ul>
                 </div>
@@ -788,7 +864,7 @@
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i aria-hidden="true" class="fas fa-map-marker-alt text-[#A77B43] mr-2"></i>
-                            <span class="text-gray-400">Rua Dr. Ézio Carneiro, Qd 18 Lt 13, Luziânia-GO</span>
+                            <span class="text-gray-400">Rua Dr. Ézio Carneiro, Qd 18 Lt 13, 2º andar, Luziânia-GO</span>
                         </li>
                         <li class="flex items-center">
                             <i aria-hidden="true" class="fas fa-phone-alt text-[#A77B43] mr-2"></i>
@@ -816,9 +892,7 @@
     <div id="cookieConsent"
         class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden transform transition-transform duration-300 translate-y-full">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <p class="mb-4 md:mb-0 text-center md:text-left">Este site utiliza cookies para melhorar sua experiência. Ao
-                continuar navegando, você concorda com nossa <a href="#" class="text-[#A77B43] hover:underline">Política
-                    de Privacidade</a>.</p>
+            <p class="mb-4 md:mb-0 text-center md:text-left">Este site utiliza cookies para melhorar sua experiência.</p>
             <button id="acceptCookies"
                 class="bg-[#A77B43] hover:bg-[#DEBE6D] text-white font-bold py-2 px-6 rounded transition duration-300 whitespace-nowrap">
                 Aceitar
@@ -854,9 +928,9 @@
             <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-6">
                 <i class="fas fa-check text-4xl text-green-600"></i>
             </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">Obrigado!</h1>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Obrigado!</h2>
             <p class="text-gray-600 text-lg mb-8">
-                Sua mensagem foi enviada com sucesso. Entrarei em contato o mais breve possível.
+                Recebemos sua mensagem. Entrarei em contato o mais breve possível.
             </p>
             <button id="closeModalButton"
                 class="w-full bg-[#A77B43] hover:bg-[#DEBE6D] text-white font-bold py-3 px-6 rounded-lg transition duration-300">
