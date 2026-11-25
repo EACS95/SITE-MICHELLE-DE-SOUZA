@@ -1,0 +1,11 @@
+{
+  "name": "site-michelle-de-souza",
+  "private": true,
+  "description": "Site da Dra. Michelle de Souza. O CSS do Tailwind é gerado localmente e publicado já pronto em css/tailwind.css.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.input.css -o ./css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

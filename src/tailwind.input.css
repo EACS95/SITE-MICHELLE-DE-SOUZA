@@ -1,0 +1,5 @@
+/* Entrada do Tailwind. Não editar css/tailwind.css à mão: ele é gerado a partir daqui com
+   npm run build:css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
